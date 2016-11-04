@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HybridMemo</title>
+
+<link rel="stylesheet" href="./resource/css/index.css" />
+
+<script type="text/javascript" src="./resource/js/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="./resource/js/jquery.mobile-1.0a4.1.min.js"></script>
+<script type="text/javascript" src="./resource/js/iscroll.js"></script>
+<script type="text/javascript" src="./resource/js/resource.js"></script>
+<script type="text/javascript" src="./resource/js/pageEvent.js"></script>
+<script type="text/javascript" src="./resource/js/pageRecentMemoList.js"></script>
+<script type="text/javascript" src="./resource/js/pageSetting.js"></script>
+<script type="text/javascript" src="./resource/js/pageInputMemo.js"></script>
+<script type="text/javascript" src="./resource/js/pageViewMemo.js"></script>
+<script type="text/javascript" src="./resource/js/pageDeletePopup.js"></script>
+
+</head>
+<body>
+
+<!--
+issue 1 
+	data-fullscreen=true 옵션은 아직 사용 단계가 아님 ( 화면이 심하게 깜박거림 )
+issue 2
+	programmatic jquery mobile history back
+issue 3
+	mobile init event
+-->
+ 
+<!-- depth 1 -->
+
+<!-- 최근글목록 -->
+<div id="pageRecentMemoList" data-role="page" class="normal-page"  > 
+	<div  class="custom-header" data-role="header" data-position="fixed" data-backbtn="false">	
+		<h1>최근글</h1>
+		<div class="ui-btn-right">
+			<div class="btn-roundrect">
+				<a id="pRML_inputMemo" class="left" >입력</a>		
+				<a id="pRML_editList"  data-toEdit="true" class="right">편집</a>		
+			</div>
+		</div>
+	</div> 
+	<div class="custom-content" data-role="content">
+		<ul id="pRecentMemoList_memoList" data-role="listview"></ul>
+	</div> 
+	<div class="custom-footer" data-role="footer" data-position="fixed" >
+		<div data-role="navbar">
+			<ul class="ui-grid-a">
+				<li class="ui-block-a"><a href="#pageRecentMemoList" class="ui-btn-active" >최근글</a></li>
+				<li class="ui-block-c"><a href="#pageSetting"  >설정</a></li>
+			</ul>
+		</div>	
+	</div> 
+</div>
+  
+<!-- 설정화면 -->
+<div id="pageSetting" data-role="page" class="normal-page" >  
+	<div  class="custom-header" data-role="header" data-position="fixed" data-backbtn="false">
+		<h1>설정</h1>	
+	</div> 
+	<div class="custom-content" data-role="content">
+			<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b"> 
+				<li data-role="list-divider">테마변경</li> 
+				<li><a onclick="javascript:funcPageSetting.changeType1();" >기본테마</a></li> 
+				<li><a onclick="javascript:funcPageSetting.changeType2();">Valencia</a></li>  
+			</ul> 
+	</div> 
+	<div class="custom-footer" data-role="footer" data-position="fixed">
+		<div data-role="navbar">
+			<ul class="ui-grid-a">
+				<li class="ui-block-a"><a href="#pageRecentMemoList" >최근글</a></li>
+				<li class="ui-block-c"><a href="#pageSetting" class="ui-btn-active" >설정</a></li>
+			</ul>
+		</div>		
+	</div> 
+</div> 
+
+<!-- input page -->
+
+<!-- 메모 입력화면 -->
+<div id="pageInputMemo" data-role="page" class="no-footer-page"  >
+	<div  class="custom-header" data-role="header" data-position="fixed">
+		<h1>입력</h1>	
+	</div> 
+	<div class="custom-content" data-role="content" >
+		<!-- 타이틀 입력 -->	
+		    <label for="pInputMemo_inputTitle">제목</label>
+		    <input type="text" 
+		    			name="pInputMemo_inputTitle" id="pInputMemo_inputTitle" 
+		    			value="" placeholder="제목을 입력해주세요" />
+		<!-- 내용 입력 -->
+			<label for="pInputMemo_inputContent">내용</label>
+			<textarea cols="40" rows="8" 
+									name="pInputMemo_inputContent" id="pInputMemo_inputContent"
+									placeholder="내용을 입력해주세요"		
+									style="height:40%;" ></textarea>
+
+		
+		<a id="pInputMemo_saveMemo" data-role="button" data-icon="plus">메모추가</a>				
+		
+	</div>  
+</div> 
+
+<!-- 메모 보기화면 -->
+<div id="pageViewMemo" data-role="page" class="no-footer-page"  >
+	<div  class="custom-header" data-role="header" data-position="fixed">
+		<h1 id="PVM_title">입력</h1>
+		<a data-role="button" id="btnToEditPage" class="ui-btn-right" >수정</a>	
+	</div> 
+	<div class="custom-content" data-role="content">	
+		<!-- 내용 표시 -->
+		<p id="PVM_content"  style="" ></p>		
+	</div>  
+</div> 
+
+<!-- 리스트 팝업 -->
+<div id="pageDeletePopup" data-role="dialog" >  
+	<div  data-role="header" data-position="fixed">
+		<h1>삭제하시겠습니까?</h1>	
+	</div> 
+	<div data-role="content">	
+		<!-- 내용 표시 -->
+		<a href="javascript:funcPageDeletePopup.confirm();" data-role="button" >확인</a>		
+		<a href="javascript:funcPageDeletePopup.hide();" data-role="button" >취소</a>		
+	</div>  
+</div> 
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+
+<!-- 
+	참고 : 
+	http://programmingsummaries.tistory.com/229
+	https://code.angularjs.org/1.3.15/docs/tutorial/step_00 
+-->
+
+<!--
+
+	Step 3 : 필터 구성 ( Filtering Repeaters ) ( ng-model, filter 실습 )
+ 
+ -->
+<!doctype html>
+<html lang="en" ng-app="phonecatApp">
+<head>
+<meta charset="utf-8">
+<title>Memo for AngularjS</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script type="text/javascript" src="/app/angularjs/js/controllers3.js"></script>
+</head>
+<body ng-controller="PhoneListCtrl">
+
+<div class="container-fluid">
+	<div class="row">
+		
+		<div class="col-md-2">
+			<!--Sidebar content-->
+			Search: <input ng-model="query">
+		</div>
+		
+		<div class="col-md-10">
+			<!--Body content-->
+			<ul class="phones">
+				<li ng-repeat="phone in phones | filter:query">
+					<span>{{phone.name}}</span>
+					<p>{{phone.snippet}}</p>
+				</li>
+			</ul>
+		</div>
+		
+	</div>
+</div>
+
+</body>
+</html>

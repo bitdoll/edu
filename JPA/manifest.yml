@@ -1,0 +1,7 @@
+---
+applications:
+- name: SPC
+  memory: 1024M
+  instances: 1
+  path: target/jpa-0.0.1-SNAPSHOT.war
+

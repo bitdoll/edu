@@ -1,0 +1,79 @@
+spring:
+  profiles:
+    active: local-h2
+
+server:
+  port: 8080
+  display-name: sample
+  session:
+    timeout: 3600
+
+---
+spring:
+  profiles: local-h2
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:./h2db/sampleproject;AUTO_SERVER=TRUE
+    username: sa
+    password: sa
+    max-active: 10
+  jpa:
+    database: mysql
+    show-sql: true    
+    hibernate:
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        format_sql: true
+        hbm2ddl:
+          auto: create-drop
+          # import_files: /init/init.sql        
+        # Connection 문제를 해결하기 위한 옵션
+        c3p0: 
+          timeout: 1800
+          idle_test_period: 100
+  # Spring Dev Tools 설정
+  devtools:
+    livereload:
+      enabled: true
+# 커스텀 Config
+config:
+  # WAS 관련 설정
+  was: 
+    domain: http://localhost:8080 
+
+---
+spring:
+  profiles: local-mysql
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://exntu.kr:31306/tfabrictest?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf8
+    username: exntu
+    password: t~paas
+    test-while-idle: true
+    test-on-borrow: true
+    validation-query: SELECT 1
+  jpa:
+    database: mysql
+    show-sql: true    
+    hibernate:
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        format_sql: true
+        hbm2ddl:
+          auto: create-drop
+          # import_files: /init/init.sql        
+        # Connection 문제를 해결하기 위한 옵션
+        c3p0: 
+          timeout: 1800
+          idle_test_period: 100
+  # Spring Dev Tools 설정
+  devtools:
+    livereload:
+      enabled: true
+# 커스텀 Config
+config:
+  # WAS 관련 설정
+  was: 
+    domain: http://localhost:8080

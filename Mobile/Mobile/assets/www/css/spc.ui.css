@@ -1,0 +1,245 @@
+@charset "utf-8";
+
+/*************************************************************************************************************
+	SHP UI CSS
+*************************************************************************************************************/
+/*************************************************************************************************************
+	
+	Class 정의
+	
+	(Project)-(type)-(name)
+	
+	spc-ui-xxx       : 기본
+	
+	spc-theme-xxx    : 테마
+	spc-layout-xxx   : 레이아웃
+	spc-fixed-xxx    : 고정
+	spc-wrap-xxx     : 영역 구분
+	
+	spc-layer-xxx    : 레이어 팝업
+	spc-form-xxx     : 입력, 수정 화면
+	spc-view-xxx     : 상세 화면
+	spc-box-xxx      : 박스
+	spc-list-xxx     : 목록
+	spc-table-xxx    : 표
+	spc-tab-xxx      : 탭
+	spc-btn-xxx      : 버튼
+	spc-icon-xxx     : 아이콘
+	spc-img-xxx      : 이미지
+	spc-color-xxx    : 글씨 색상
+	spc-bg-xxx       : 배경 이미지
+	spc-label-xxx    : Label
+	spc-align-xxx    : 정렬
+	spc-info-xxx     : 안내 문구
+	
+	spc-input-xxx    : Input Box
+	spc-select-xxx   : Select Box
+	spc-textarea     : Textarea
+	spc-checkbox     : Checkbox
+	spc-radio        : Radio
+	
+	spc-status-xxx   : 상태값
+	spc-type-xxx     : 유형
+	spc-data-xxx     : Data
+	
+	spc-selected     : 선택, 활성
+	spc-disabled     : 비활성
+	spc-touch        : Touch Event
+	
+	* 모든 단위는 rem 또는 % 사용
+	* PX to EM 계산기
+	  - http://www.w3schools.com/cssref/css_pxtoemconversion.asp
+	  - http://pxtoem.com/
+		
+*************************************************************************************************************/
+
+/*************************************************************************************************************
+	Font
+*************************************************************************************************************/
+@import url('../fonts/css/font-awesome.min.css');
+
+@font-face {
+  font-family:'Nanum Barun Gothic';
+  font-style:normal;
+  font-weight:normal;
+  src:local('※');
+  src:url(../fonts/NanumBarunGothic.woff) format('woff');
+}
+
+/*************************************************************************************************************
+	Setting
+*************************************************************************************************************/
+* {font-family:"Nanum Barun Gothic", sans-serif, arial; -webkit-text-size-adjust:none; -webkit-font-smoothing:antialiased;}
+html,body {font-size:16px; -webkit-user-select:none; -webkit-tap-highlight-color:rgba(0,0,0,0);}
+body,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,form,fieldset,p,button {margin:0; padding:0;}
+ul,ol {list-style:none;}
+em,address {font-style:normal;}
+a,u {text-decoration:none;}
+input,select,textarea {-webkit-appearance:none;}
+a,input,select,textarea,button {outline:none;}
+textarea {resize:none;}
+img {display:block; overflow:hidden;}
+img,button,input {border:0 none;}
+table {width:100%; border-collapse:collapse; border-spacing:0;}
+input,textarea {-webkit-box-sizing:border-box; -webkit-border-radius:0;}
+
+/*************************************************************************************************************
+	Layout
+*************************************************************************************************************/
+html,body {height:100%; min-height:100%; background-color:#fff;}
+.spc-wrap {height:100%; min-height:100%;}
+
+header.spc-layout-header {position:fixed; left:0; top:0; width:100%; height:3.125rem; border-bottom:2px solid #fcc40d; background-color:#20b7ec; overflow:hidden; z-index:5;}
+section.spc-layout-content {padding-top:3.25rem;}
+
+/*************************************************************************************************************
+	Layout : Header
+*************************************************************************************************************/
+header h1 {height:3.125rem; font-size:1.25rem; color:#fff; text-align:center; line-height:3.1875rem; font-weight:normal;}
+header .spc-ui-left {position:absolute; left:1.25rem; top:50%; margin-top:-1.25rem;}
+header .spc-ui-right {position:absolute; right:1.25rem; top:50%; margin-top:-1.25rem;}
+header .spc-ui-left button,
+header .spc-ui-right button {float:left; margin-right:0.313rem;}
+header .spc-ui-left button:last-child,
+header .spc-ui-right button:last-child {margin-right:0;}
+
+/*************************************************************************************************************
+	Login
+*************************************************************************************************************/
+.spc-wrap.spc-type-login {background-color:#fff; overflow:hidden;}
+
+.spc-type-login h1 {width:6.25rem; height:6rem; margin:6.25rem auto; background:url(../images/logo.png) no-repeat left bottom; overflow:hidden; -webkit-background-size:100%;}
+
+.spc-form-login {padding:0 1.25rem; overflow:hidden;}
+.spc-form-login input.spc-input-login {
+	width:100%; height:2.5rem; margin-bottom:0.625rem; padding:0 0.625rem; font-size:0.875rem; border:1px solid #fec40b; background-color:#fff;
+	-webkit-border-radius:0.25rem;
+}
+
+.spc-wrap.spc-type-login .spc-ui-buttons {}
+
+/*************************************************************************************************************
+	회원가입
+*************************************************************************************************************/
+.spc-form-join {padding:0.625rem 1.25rem 1.25rem 1.25rem; overflow:hidden;}
+.spc-form-join label {display:block; margin:0.625rem 0 0.313rem 0; font-size:1rem; color:#353538;}
+.spc-form-join input.spc-input-join {
+	width:100%; height:2.5rem; margin-bottom:0.625rem; padding:0 0.625rem; font-size:0.875rem; border:1px solid #fec40b; background-color:#fff;
+	-webkit-border-radius:0.25rem;
+}
+
+/*************************************************************************************************************
+	홈
+*************************************************************************************************************/
+.spc-ui-logo {width:6.25rem; height:6rem; margin:2.5rem auto; background:url(../images/logo.png) no-repeat left bottom; overflow:hidden; -webkit-background-size:100%;}
+
+ul.spc-list-home {padding:1.25rem 0.625rem; overflow:hidden;}
+ul.spc-list-home li {width:50%; float:left; padding:0 0.625rem 1.25rem 0.625rem; -webkit-box-sizing:border-box;}
+ul.spc-list-home li a {display:block; padding:1.25rem 0; font-size:1rem; color:#6d6d6d; text-align:center; border:2px solid #20b7ec; background-color:#fff; -webkit-border-radius:0.625rem;}
+ul.spc-list-home li a i {display:block; font-size:2.25rem; margin-bottom:0.625rem;}
+
+/*************************************************************************************************************
+	게시판 : 목록
+*************************************************************************************************************/
+ol.spc-list-board {overflow:hidden;}
+ol.spc-list-board li {padding:1.25rem 1.25rem; font-size:0.875rem; border-bottom:1px solid #e9e9e9; overflow:hidden;}
+ol.spc-list-board li span {display:block;}
+ol.spc-list-board li span.spc-data-title {float:left; width:70%; text-overflow:ellipsis; white-space:nowrap; overflow:hidden;}
+ol.spc-list-board li span.spc-data-date {float:right; color:#bfbfbf;}
+ol.spc-list-board li:last-child {border-bottom:0 none;}
+
+.spc-ui-search {position:relative; padding:0 4.063rem 0 1.25rem; margin-top:0.625rem;}
+.spc-ui-search button.spc-btn-search {position:absolute; top:0; right:0.938em;}
+.spc-ui-search button.spc-btn-search i {color:#20b7ec}
+.spc-ui-search button.spc-btn-search.spc-touch i {color:#fff;}
+.spc-ui-search input.spc-input-search {width:100%; height:2.5rem; padding:0 0.625rem; font-size:0.875rem; border:1px solid #fec40b; background-color:#fff;
+	-webkit-border-radius:0.25rem;}
+/*************************************************************************************************************
+	게시판 : 상세
+*************************************************************************************************************/
+dl.spc-view-board {overflow:hidden;}
+dl.spc-view-board dt {padding:20px; font-size:1rem; border-bottom:1px solid #e9e9e9; overflow:hidden;}
+dl.spc-view-board dt span {display:block;}
+dl.spc-view-board dt span.spc-data-title {float:left; width:70%;}
+dl.spc-view-board dt span.spc-data-date {float:right; color:#bfbfbf;}
+dl.spc-view-board dd {padding:20px; font-size:1rem; line-height:1.4rem; color:#666;}
+
+/*************************************************************************************************************
+	게시판 : 등록
+*************************************************************************************************************/
+.spc-form-board {padding:0.625rem 1.25rem 1.25rem 1.25rem; overflow:hidden;}
+.spc-form-board label {display:block; margin:0.625rem 0 0.313rem 0; font-size:1rem; color:#523738;}
+.spc-form-board input.spc-input-text {
+	width:100%; height:2.5rem; margin-bottom:0.625rem; padding:0 0.625rem; font-size:0.875rem; border:1px solid #fec40b; background-color:#fff;
+	-webkit-border-radius:0.25rem;
+}
+.spc-form-board textarea {
+	width:100%; min-height:12.5rem; padding:0.625rem; font-size:1rem; border:1px solid #fec40b; background-color:#fff;
+	-webkit-border-radius:0.25rem;
+}
+.spc-form-board textarea:focus {background-color:#fdebb4 !important;}
+
+/*************************************************************************************************************
+	Input Box
+*************************************************************************************************************/
+[class*="spc-input-"]:focus {background-color:#fdebb4 !important;}
+[class*="spc-input-"]::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {color:#c8c8c8;}
+
+/*************************************************************************************************************
+	Button
+*************************************************************************************************************/
+.spc-ui-buttons {padding:0 1.25rem; overflow:hidden;}
+.spc-ui-buttons button {margin-bottom:0.625rem;}
+.spc-ui-buttons button:last-child {marginb-bottom:0;}
+
+[class*="spc-btn"] {display:block; overflow:hidden;}
+button.spc-btn-login {width:100%; height:2.5rem; font-size:1.125rem; color:#fff; background-color:#20b7ec;}
+button.spc-btn-header {height:2.5rem; padding:0 0.9375rem; font-size:1rem; color:#fff; background-color:transparent;}
+button.spc-btn-search {height:2.5rem; padding:0 0.9375rem; font-size:1rem; background-color:transparent;}
+button.spc-btn {width:100%; height:2.5rem; font-size:1.125rem; color:#fff; background-color:#20b7ec;}
+
+/*************************************************************************************************************
+	Touch
+*************************************************************************************************************/
+button.spc-btn.spc-touch,
+button.spc-btn-login.spc-touch {background-color:#32b1dd;}
+
+button.spc-btn-header.spc-touch {background-color:rgba(255,255,255,0.5);}
+button.spc-btn-search.spc-touch {background-color:#fec40b;}
+ul.spc-list-home li.spc-touch a {background-color:#bfeefe;}
+ol.spc-list-board li.spc-touch {background-color:#f5f5f5;}
+
+/*************************************************************************************************************
+	No Data
+*************************************************************************************************************/
+.spc-nodata {padding:5rem 0; text-align:center; font-size:1rem; color:#999;}
+.spc-nodata i {display:block; margin-bottom:1rem; font-size:1.6rem; color:#20b7ec;}
+
+/*************************************************************************************************************
+	Responsive : iPhone 5, iPhone 5s
+*************************************************************************************************************/
+@media only screen and (min-width:20em){
+	html,body {font-size:14.23px;}
+}
+
+/*************************************************************************************************************
+	Responsive : Galaxy S5, Galaxy S6, Galaxy Note4
+*************************************************************************************************************/
+@media only screen and (min-width:22.5em){
+	html,body {font-size:16px;}
+}
+
+/*************************************************************************************************************
+	Responsive : iPhone 6
+*************************************************************************************************************/
+@media only screen and (min-width:23.4375em){
+	html,body {font-size:16.66px;}
+}
+
+/*************************************************************************************************************
+	Responsive : iPhone 6+
+*************************************************************************************************************/
+@media only screen and (min-width:25.875em){
+	html,body {font-size:18.4px;}
+}

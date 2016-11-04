@@ -1,0 +1,65 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-8">
+			
+			<div class="col-md-2">
+				<pre>Search: </pre>
+			</div>
+			<div class="col-md-4">
+				<input type="text" class="form-control" placeholder="Search for..." ng-model="query" >
+			</div>		
+			
+			<div class="col-md-2">
+				<pre>Sort by:</pre>
+			</div>
+			<div class="col-md-4">
+		      
+				<!-- Single button Dropdown -->
+				<!-- 
+				<div class="btn-group" dropdown is-open="dropdown.isopen">
+					<button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="disabled" >
+						<span>{{dropdown.selectedText}}</span> 
+					  	<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu"  >
+					  <li><a href="#" ng-click="dropdown.toggleDropdown('name', 'Alphabetical', $event)" >Alphabetical</a></li>
+					  <li class="divider"></li>
+					  <li><a href="#" ng-click="dropdown.toggleDropdown('age', 'Newest', $event)" >Newest</a></li>
+					</ul>					
+				</div>
+				 -->
+				
+				<div class="btn-group" dropdown is-open="dropdown.isopen">
+					<button type="button" class="btn btn-blue dropdown-toggle" data-toggle="dropdown"  dropdown-toggle ng-disabled="disabled" >
+						<span>{{dropdown.selectedText}}</span> 
+					  	<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="" ng-click="dropdown.toggleDropdown('name', 'Alphabetical', $event)" >Alphabetical</a></li>
+						<li class="divider"></li>
+						<li><a href="" ng-click="dropdown.toggleDropdown('age', 'Newest', $event)" >Newest</a></li>					
+					</ul>
+				</div>				
+				
+				
+			</div>
+    	</div>
+    	
+	    <div class="col-md-8">
+	     	<!--Body content-->
+      		
+			<ul class="list-group list-group-minimal">
+				<li class="list-group-item" ng-repeat="phone in phones | filter:query | orderBy:orderProp" >
+					<div class="media-left">
+						<a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"></a>
+					</div>
+					<div class="media-body">
+						<a href="#/phones/{{phone.id}}" class="media-heading" >{{phone.name}}</a>
+						<p>{{phone.snippet}}</p>
+					</div>
+				</li>
+			</ul>
+				
+	    </div>
+  </div>
+</div>

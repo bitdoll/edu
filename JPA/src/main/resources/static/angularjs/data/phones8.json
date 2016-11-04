@@ -1,0 +1,23 @@
+[
+    { 
+      "id"		: "id-1",
+      "imageUrl": "/app/angularjs/img/phones/img1.png",
+      "name" 	: "Nexus S", 
+      "snippet" : "Fast just got faster with Nexus S. ", 
+      "age" 	: 1 
+    },
+    { 
+      "id"		: "id-2",
+      "imageUrl": "/app/angularjs/img/phones/img2.png",
+      "name"	: "Motorola XOOM™ with Wi-Fi",
+      "snippet"	: "The Next, Next Generation tablet.",
+      "age" 	: 2 
+    },
+    { 
+      "id"		: "id-3",
+      "imageUrl": "/app/angularjs/img/phones/img3.png",    
+      "name"	: "MOTOROLA XOOM™",
+      "snippet"	: "The Next, Next Generation tablet.",
+      "age" 	: 3
+    }     
+]

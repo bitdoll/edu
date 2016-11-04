@@ -1,0 +1,8 @@
+---
+applications: 
+- name: sampleproject
+  mem: 256M
+  buildpack: java_buildpack_offline
+  path: target/SampleProject-0.0.1-SNAPSHOT.war
+  services: 
+  - test-appservice
