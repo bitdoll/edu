@@ -3,7 +3,7 @@
 # ex) --spring.profiles.active=local,mysql-local-database
 spring:
   profiles:
-    active: h2-in-memory-db
+    active: h2-local-db
 
   datasource:
     initialize: true

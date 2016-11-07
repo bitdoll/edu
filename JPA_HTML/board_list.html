@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="format-detection" content="address=no;email=no;telephone=no">
+<link rel="stylesheet" href="css/spc.ui.css">
+<script src="js/common.js"></script>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/spc.ui.js"></script>
+<title>SPC</title>
+</head>
+
+<body>
+    
+    <!-- Wrap -->
+    <div class="spc-wrap">
+        
+        <!-- Header -->
+        <header class="spc-layout-header">
+            <div class="spc-ui-left">
+                <button id="homeBtn" type="button" class="spc-btn-header" title="홈"><i class="fa fa-home"></i></button>
+            </div>
+            <h1>공지사항</h1>
+            <!-- 
+            <div class="spc-ui-right">
+                <button id="createBtn" type="button" class="spc-btn-header" title="등록"><i class="fa fa-plus"></i></button>
+            </div>
+             -->
+        </header>
+        <!-- //Header -->
+        
+        <!-- Content -->
+        <section class="spc-layout-content">
+
+            <img class="media-object" />
+
+            <!-- 검색 -->
+            <div class="spc-ui-search">
+                <button id="searchBtn" class="spc-btn-search"><i class="fa fa-search"></i></button>
+                <input id="searchKeyword" type="text" class="spc-input-search" placeholder="">
+            </div>
+            <!-- //검색 -->
+            
+            <ol id="noticeList" class="spc-list-board">
+
+            </ol>
+
+            <div id="nodata" class="spc-nodata" style="display:none">
+                <i class="fa fa-exclamation-circle"></i>
+                등록된 게시물이 없습니다.
+            </div>
+            
+            <div class="spc-ui-buttons">
+                <button id="moreBtn" type="button" class="spc-btn">더보기</button>
+            </div>
+            
+        </section>
+        <!-- //Content -->
+        
+    </div>
+    <!-- //Wrap -->
+
+    <!-- Template -->
+    <div style="display:none">
+        <li id="templateNoticeList" >
+            <span class="spc-data-title">게시판 제목이 들어갈 곳입니다 길어지면.</span>
+            <span class="spc-data-date">2016-03-11</span>
+        </li>
+    </div>
+	<!-- 
+    <script type="text/javascript" src="cordova.js"></script>
+     -->
+    <script src="js/board_list.js" ></script>
+
+</body>
+</html>

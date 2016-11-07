@@ -61,8 +61,8 @@ INSERT INTO product_category(product_id, category_id) VALUES ('300', '400');
 INSERT INTO product_category(product_id, category_id) VALUES ('400', '400');
 
 -- users
-INSERT INTO users(user_id, password, name, email, version, created_time, created_by, modified_time, modified_by) VALUES ('spc', '8d2cc5e694bfcbe4cbdf6c68b5e7a5fb47c9203dcbc487af679ae19fcf0360ab', 'spc', 'spc@gmail.com', 1.0, NOW(), 'INIT',  NOW(), 'INIT');
-INSERT INTO users(user_id, password, name, email, version, created_time, created_by, modified_time, modified_by) VALUES ('bliex', '49a9f3ef8117b7eeac232f6e399a612c97e9c5dcac78e2a0434e519896f7bfd8', 'bliex', 'spc@gmail.com', 1.0, NOW(), 'INIT',  NOW(), 'INIT');
+INSERT INTO users(user_id, password, name, email, version, created_time, created_by, modified_time, modified_by, token_uuid) VALUES ('spc', '8d2cc5e694bfcbe4cbdf6c68b5e7a5fb47c9203dcbc487af679ae19fcf0360ab', 'spc', 'spc@gmail.com', 1.0, NOW(), 'INIT',  NOW(), 'INIT', '8d2cc5e694bfcbe4cbdf6c68b5e7a5fb47c9203dcbc487af679ae19fcf0360ab');
+INSERT INTO users(user_id, password, name, email, version, created_time, created_by, modified_time, modified_by, token_uuid) VALUES ('bliex', '49a9f3ef8117b7eeac232f6e399a612c97e9c5dcac78e2a0434e519896f7bfd8', 'bliex', 'bliex@gmail.com', 1.0, NOW(), 'INIT',  NOW(), 'INIT', '49a9f3ef8117b7eeac232f6e399a612c97e9c5dcac78e2a0434e519896f7bfd8');
 
 -- board
 INSERT INTO boards(board_id, board_type, title, contents, user_id, version, created_time, created_by, modified_time, modified_by) VALUES ('1', 'NOTICE_BOARD', 'title1', 'content1', 'spc', 1.0, NOW(), 'INIT',  NOW(), 'INIT');
