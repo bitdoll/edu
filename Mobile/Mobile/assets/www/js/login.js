@@ -10,7 +10,7 @@ $( document ).ready( function() {
 		$.ajax(
 			{
 				contentType	: 'application/json; charset=utf-8',
-				url  		: 'http://spc.pcf.exntu.com/swapi/user/login',
+				url  		: 'http://jpa.crepaas.org/swapi/user/login',
 				type 		: 'POST',
 				dataType	: 'json',
 				data 		: JSON.stringify({

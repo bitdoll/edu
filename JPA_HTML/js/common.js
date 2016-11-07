@@ -1,4 +1,4 @@
 //로컬 일 경우 
-var targetUrl = "http://localhost:8080";
+//var targetUrl = "http://localhost:8080";
 //paas일 경우
-//var targetUrl = "http://spc.pcf.exntu.com";
+var targetUrl = "http://jpa.crepaas.org";

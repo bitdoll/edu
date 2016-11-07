@@ -7,7 +7,7 @@ $( document ).ready( function() {
 	$.ajax(
 		{
 			contentType	: 'application/json; charset=utf-8',
-			url  		: 'http://spc.pcf.exntu.com/swapi/board/detail',
+			url  		: 'http://jpa.crepaas.org/swapi/board/detail',
 			type 		: 'POST',
 			dataType	: 'json',
 			beforeSend 	: function( xhr ) {

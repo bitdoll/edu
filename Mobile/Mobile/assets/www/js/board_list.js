@@ -3,7 +3,8 @@ $( document ).ready( function() {
 	var $noticeList	= $( '#noticeList' );
 	var $template 	= $( '#templateNoticeList' );
 	var $btnCreate	= $( '#createBtn' );
-
+	var $btnHome    = $( '#homeBtn');
+	
 	var $btnMore	= $( '#moreBtn' );
 	var nPage		= 1;
 
@@ -11,7 +12,7 @@ $( document ).ready( function() {
 		$.ajax(
 			{
 				contentType	: 'application/json; charset=utf-8',
-				url  		: 'http://spc.pcf.exntu.com/swapi/board/list',
+				url  		: 'http://jpa.crepaas.org/swapi/board/list',
 				type 		: 'POST',
 				dataType	: 'json',
 				beforeSend 	: function( xhr ) {
@@ -60,6 +61,10 @@ $( document ).ready( function() {
 		window.location.href = 'board_detail.html';
 	});
 
+	$btnHome.on( 'click', function(event){
+		window.location.href = "main.html";
+	});
+	
 	$btnCreate.on( 'click', function( event ) {
 		event.preventDefault();
 

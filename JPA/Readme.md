@@ -1,11 +1,17 @@
-# JPA
+# Hanyang Edu
 
-This folder is primarily a container for the top-level pieces of the application.
 
 ## Pre Requirement
 
  - JDK 8.x
  - Maven 3.2 or above
+ - Eclipse
+
+## Project Description
+ - JPA : Spring / BootSpring / Spring Data(JPA) 기반의 Web Server => 서버프로그램만 있음
+ - JPA HTML : HTML 기반에 샘플 프로젝트 JQuery 기반
+ - Mobile : JPA_HTML를 안드로이드 기반으로 감싸 만든 프로젝트 -> 하이브리드 앱 방식
+ - SampleProject : Spring / BootSpring / Spring Data(JPA) / 메모장 html UI 가 들어가 있음.
 
 ## Basic Application Structure
 
